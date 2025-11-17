@@ -1,0 +1,17 @@
+class Solution {
+    public boolean kLengthApart(int[] nums, int k) {
+        List<Integer> list = new ArrayList<>();
+        for(int i=0;i<nums.length;i++){
+           if(nums[i] == 1){
+            list.add(i);
+           }
+        }
+        System.out.print(list);
+        for(int i = 1 ; i<list.size();i++){
+            if((list.get(i) - list.get(i-1) -1 < k)){
+                return false;
+            }
+        }
+        return true;
+    }
+}
